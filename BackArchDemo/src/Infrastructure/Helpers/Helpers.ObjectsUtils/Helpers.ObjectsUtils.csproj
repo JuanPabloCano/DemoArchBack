@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>$(NetCoreTargetVersion)</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\$(NetCoreTargetVersion)\Helpers.ObjectsUtils.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\$(NetCoreTargetVersion)\Helpers.ObjectsUtils.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="$(AutoMapper)" />
+    <PackageReference Include="AutoMapper.Data" Version="$(AutoMapperData)" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="$(AutoMapperExtensionsMicrosoftDependencyInjection)" />
+    <PackageReference Include="credinet-exception-middleware" Version="$(credinetexceptionmiddleware)" />
+    <PackageReference Include="credinet.comun.api.core3" Version="$(credinetcomunapicore3)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="$(MicrosoftExtensionsConfigurationAzureKeyVault)" />
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="$(OpenTelemetryExporterConsole)" />
+    <PackageReference Include="OpenTelemetry.Exporter.Zipkin" Version="$(OpenTelemetryExporterZipkin)" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryInstrumentationAspNetCore)" />
+    <PackageReference Include="WindowsAzure.Storage" Version="$(WindowsAzureStorage)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MapperObject.cs"></None>
+    <None Remove="bin\Debug\net6.0\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\net6.0\Helpers.ObjectsUtils.deps.json" />
+    <Content Include="bin\Debug\net6.0\Helpers.ObjectsUtils.dll" />
+    <Content Include="bin\Debug\net6.0\Helpers.ObjectsUtils.pdb" />
+    <Content Include="bin\Debug\net6.0\Helpers.ObjectsUtils.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="bin\Debug\net6.0\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="bin\Debug\net6.0\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Tests\Infrastructure\DrivenAdapters\DrivenAdapter.Files.Test\DrivenAdapter.Files.Tests.csproj" />
+  </ItemGroup>
+</Project>
