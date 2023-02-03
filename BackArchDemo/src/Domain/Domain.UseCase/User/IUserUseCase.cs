@@ -36,7 +36,7 @@ public interface IUserUseCase
     /// <param name="id"></param>
     /// <param name="user"></param>
     /// <returns></returns>
-    Task ActualizarUsuarioPorId(string id, Model.Entities.User user);
+    Task<Model.Entities.User> ActualizarUsuarioPorId(string id, Model.Entities.User user);
 
     /// <summary>
     /// EliminarUsuarioPorId

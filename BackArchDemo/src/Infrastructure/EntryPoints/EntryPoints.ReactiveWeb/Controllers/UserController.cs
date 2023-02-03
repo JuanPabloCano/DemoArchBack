@@ -92,7 +92,7 @@ namespace EntryPoints.ReactiveWeb.Controllers
             {
                 var user = userRequest.AsEntity();
                 await _userUseCase.ActualizarUsuarioPorId(id, user);
-                return "Updated";
+                return UserResponse.Exec(id, user);
             }, "");
         }
 

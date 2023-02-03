@@ -64,11 +64,13 @@ namespace DrivenAdapters.Mongo
         /// </summary>
         /// <param name="id"></param>
         /// <param name="user"></param>
-        public async Task ActualizarUsuarioPorIdAsync(string id, User user)
+        public async Task<User> ActualizarUsuarioPorIdAsync(string id, User user)
         {
-            UserData userData = new(user.Nombre, user.Apellido, user.Edad, user.Correo, user.Ciudadania,
+            UserData userData = new(id, user.Nombre, user.Apellido, user.Edad, user.Correo, user.Ciudadania,
                 user.Ocupacion);
-            await _userCollection.FindOneAndReplaceAsync(selectedUser => selectedUser.Id == id, userData);
+            var updatedUser =
+                await _userCollection.FindOneAndReplaceAsync(selectedUser => selectedUser.Id == id, userData);
+            return updatedUser.AsEntity();
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Domain.Model.Entities.Gateway
         /// <param name="id"></param>
         /// <param name="user"></param>
         /// <returns></returns>
-        Task ActualizarUsuarioPorIdAsync(string id, User user);
+        Task<User> ActualizarUsuarioPorIdAsync(string id, User user);
 
         /// <summary>
         /// EliminarUsuarioPorId

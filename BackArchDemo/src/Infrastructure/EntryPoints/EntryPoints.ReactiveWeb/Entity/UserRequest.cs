@@ -8,6 +8,10 @@ namespace EntryPoints.ReactiveWeb.Entity;
 public class UserRequest
 {
     /// <summary>
+    /// Id
+    /// </summary>
+    public string Id { get; set; }
+    /// <summary>
     /// Name
     /// </summary>
     public string Nombre { get; set; }
@@ -37,5 +41,9 @@ public class UserRequest
     /// </summary>
     public string Ocupacion { get; set; }
 
-    public User AsEntity() => new(Nombre, Apellido, Edad, Ciudadania, Ocupacion);
+    /// <summary>
+    /// AsEntity
+    /// </summary>
+    /// <returns></returns>
+    public User AsEntity() => new(Id, Nombre, Apellido, Edad, Correo, Ciudadania, Ocupacion);
 }

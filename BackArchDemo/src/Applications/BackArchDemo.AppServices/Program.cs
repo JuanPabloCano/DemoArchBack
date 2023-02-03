@@ -25,7 +25,6 @@ builder.Configuration
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonProvider();
 
-
 //builder.Configuration.AddKeyVaultProvider();
 
 builder.Host.UseSerilog((ctx, lc) => lc
@@ -48,7 +47,6 @@ builder.Services.AddSwaggerGen();
 
 builder.Configuration.AddMongoProvider(
     nameof(MongoConfigurationProvider), secrets.MongoConnection, country);
-
 
 #region Service Configuration
 

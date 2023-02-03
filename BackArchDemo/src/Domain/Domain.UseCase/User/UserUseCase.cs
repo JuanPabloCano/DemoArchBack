@@ -60,9 +60,9 @@ public class UserUseCase : IUserUseCase
     /// <param name="id"></param>
     /// <param name="user"></param>
     /// <returns></returns>
-    public async Task ActualizarUsuarioPorId(string id, Model.Entities.User user)
+    public async Task<Model.Entities.User> ActualizarUsuarioPorId(string id, Model.Entities.User user)
     {
-        await _userEntityRepository.ActualizarUsuarioPorIdAsync(id, user);
+        return await _userEntityRepository.ActualizarUsuarioPorIdAsync(id, user);
     }
 
     /// <summary>

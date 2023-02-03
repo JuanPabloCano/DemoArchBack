@@ -59,7 +59,29 @@ namespace DrivenAdapters.Mongo.Entities
         public User AsEntity() => new(Id, Nombre, Apellido, Edad, Correo, Ciudadania, Ocupacion);
 
         /// <summary>
-        /// Constructor
+        /// Constructor con Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="edad"></param>
+        /// <param name="correo"></param>
+        /// <param name="ciudadania"></param>
+        /// <param name="ocupacion"></param>
+        public UserData(string id, string nombre, string apellido, int edad, string correo, string ciudadania,
+            string ocupacion)
+        {
+            Id = id;
+            Nombre = nombre;
+            Apellido = apellido;
+            Edad = edad;
+            Correo = correo;
+            Ciudadania = ciudadania;
+            Ocupacion = ocupacion;
+        }
+
+        /// <summary>
+        /// Constructor sin Id
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
