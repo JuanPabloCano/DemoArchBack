@@ -1,5 +1,3 @@
-using System;
-
 namespace Domain.Model.Entities
 {
     /// <summary>
@@ -42,46 +40,9 @@ namespace Domain.Model.Entities
         /// </summary>
         public string Ocupacion { get; set; }
 
+        
         /// <summary>
-        /// Constructor sin Id y correo
-        /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="apellido"></param>
-        /// <param name="edad"></param>
-        /// <param name="ciudadania"></param>
-        /// <param name="ocupacion"></param>
-        public User(string nombre, string apellido, int edad, string ciudadania,
-            string ocupacion)
-        {
-            Nombre = nombre;
-            Apellido = apellido;
-            Edad = edad;
-            Ciudadania = ciudadania;
-            Ocupacion = ocupacion;
-        }
-
-        /// <summary>
-        /// Constructor con correo
-        /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="apellido"></param>
-        /// <param name="edad"></param>
-        /// <param name="correo"></param>
-        /// <param name="ciudadania"></param>
-        /// <param name="ocupacion"></param>
-        public User(string nombre, string apellido, int edad, string correo, string ciudadania,
-            string ocupacion)
-        {
-            Nombre = nombre;
-            Apellido = apellido;
-            Edad = edad;
-            Correo = correo;
-            Ciudadania = ciudadania;
-            Ocupacion = ocupacion;
-        }
-
-        /// <summary>
-        /// Constructor con Id y correo
+        /// Constructor
         /// </summary>
         /// <param name="id"></param>
         /// <param name="nombre"></param>

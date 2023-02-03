@@ -1,3 +1,4 @@
+#nullable enable
 using Domain.Model.Entities;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -14,7 +15,7 @@ namespace DrivenAdapters.Mongo.Entities
         /// </summary>
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Name
@@ -38,7 +39,7 @@ namespace DrivenAdapters.Mongo.Entities
         /// Correo
         /// </summary>
         [BsonElement(elementName: "correo")]
-        public string Correo { get; set; }
+        public string? Correo { get; set; }
 
         /// <summary>
         /// Ciudadanía
